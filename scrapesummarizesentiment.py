@@ -59,7 +59,7 @@ print('Summarizing articles.')
 def summarize(articles):
     summaries = []
     for article in articles:
-        input_ids = tokenizer.encode(article, return_tensors="pt")
+        input_ids = tokenizer.encode(article, return_tensors="pt", truncation=True)
         output = model.generate(input_ids, max_length=55, num_beams=5, early_stopping=True)
         summary = tokenizer.decode(output[0], skip_special_tokens=True)
         summaries.append(summary)
