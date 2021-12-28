@@ -93,3 +93,14 @@ final_output.insert(0, ['Ticker','Summary', 'Sentiment', 'Sentiment Score', 'URL
 with open('ethsummaries.csv', mode='w', newline='') as f:
     csv_writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     csv_writer.writerows(final_output)
+
+# Create graph
+plt.figure(figsize=(8,6))
+for i in range(1, len(final_output)):
+    print(type(final_output))
+    for x in range(1, len(final_output)):
+        print(final_output[i][3])
+    plt.scatter(final_output[i][2], final_output[i][3], color='Purple')
+plt.title(f"{monitored_tickers} Market Sentiment")
+# plt.legend()
+plt.show()
