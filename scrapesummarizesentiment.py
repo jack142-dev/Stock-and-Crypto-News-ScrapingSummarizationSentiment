@@ -5,6 +5,8 @@ import requests
 import re
 from transformers import pipeline
 import csv
+import pandas as pd
+import matplotlib.pyplot as plt
 
 # 2. Setup Model
 model_name = "human-centered-summarization/financial-summarization-pegasus"
